@@ -1,0 +1,42 @@
+[package]
+name = "ridff-tools"
+version = "0.1.12"
+edition = "2024"
+autoexamples = false
+description = "A native side-by-side text diff tool built with GPUI Kit"
+license = "MIT"
+homepage = "https://rdiff.ytlaw80.com"
+
+[[bin]]
+name = "rdiff"
+path = "src/main.rs"
+
+[dependencies]
+gpui-kit = { version = "=0.8.0", features = ["tree-sitter-languages"] }
+# Upstream query resources omitted by GPUI Kit's default language registrations.
+tree-sitter-c-sharp = "=0.23.5"
+tree-sitter-cmake = "=0.7.5"
+tree-sitter-embedded-template = "=0.23.2"
+tree-sitter-javascript = "=0.23.1"
+tree-sitter-swift = "=0.7.4"
+similar = { version = "=3.2.0", features = ["unicode"] }
+tempfile = "3.27"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+semver = "1"
+sha2 = "0.10"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+
+[build-dependencies]
+embed-resource = "=3.0.12"
+image = { version = "=0.25.10", default-features = false, features = ["png"] }
+
+[patch.crates-io]
+# 0.8.0 plus a small external-fold API; see vendor/gpui-base/RDIFF-PATCH.md.
+gpui-base = { path = "vendor/gpui-base" }
+
+[profile.dev]
+debug = 0
+
+[profile.dev.package."*"]
+debug = 0
