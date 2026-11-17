@@ -206,7 +206,7 @@ translatePage();
 
 async function updateReleaseBadge() {
   try {
-    const response = await fetch("https://api.github.com/repos/zenogrid-law80/rdiff/releases/latest", {
+    const response = await fetch("https://api.github.com/repos/taiyoungjang/rdiff/releases/latest", {
       headers: { Accept: "application/vnd.github+json" }
     });
     if (!response.ok) return;

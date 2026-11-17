@@ -67,10 +67,10 @@ If macOS blocks the first launch, review the app in System Settings > Privacy & 
 For CLI and P4V integration, use:
   /Applications/rdiff.app/Contents/MacOS/rdiff
 
-macOS updates are installed manually from https://github.com/zenogrid-law80/rdiff/releases/latest
+macOS updates are installed manually from https://github.com/taiyoungjang/rdiff/releases/latest
 The in-app self-updater currently supports Windows x64 only.
 
-Source and license: https://github.com/zenogrid-law80/rdiff
+Source and license: https://github.com/taiyoungjang/rdiff
 README
 dmg="$output/rdiff-macos-arm64.dmg"
 hdiutil create -volname "rdiff $version" -srcfolder "$stage" -ov -format UDZO "$dmg"

@@ -8,15 +8,15 @@ The static website lives in [`website/`](website/) and is deployed through GitHu
 
 ## Running
 
-Download the Windows x64 `.msi` installer from [GitHub Releases](https://github.com/zenogrid-law80/rdiff/releases/latest). It installs for the current user at `%LOCALAPPDATA%\Programs\rdiff`, adds a Start menu shortcut, and can be removed through Windows **Installed apps**. Administrator access is not required. The standalone `.exe` is also available for portable use.
+Download the Windows x64 `.msi` installer from [GitHub Releases](https://github.com/taiyoungjang/rdiff/releases/latest). It installs for the current user at `%LOCALAPPDATA%\Programs\rdiff`, adds a Start menu shortcut, and can be removed through Windows **Installed apps**. Administrator access is not required. The standalone `.exe` is also available for portable use.
 
 For MSI installations, self-update downloads and verifies the new MSI, then waits for all rdiff windows to close normally before running Windows Installer. Save your work and close rdiff when **Update ready · Close rdiff** appears. Windows Installed apps is updated to the new package version. The tooltip or CLI output provides a status-file path; its directory also contains the installation log. No editor process is forcibly closed and no automatic reboot is requested. Portable copies continue to update the executable directly. Backup folders from portable updates are retained when uninstalling.
 
 The original v0.1.1 updater only replaces the executable. Install the v0.1.3 or later MSI once to enable MSI-based updates for subsequent releases. Version 0.1.3 also removes a PowerShell module dependency that could prevent v0.1.2 MSI updates from completing.
 
-For unattended installation, use `msiexec /i rdiff-0.1.12-windows-x86_64.msi /qn /norestart`.
+For unattended installation, use `msiexec /i rdiff-0.1.13-windows-x86_64.msi /qn /norestart`.
 
-On Apple Silicon Macs running macOS 11 or later, download [rdiff-macos-arm64.dmg](https://github.com/zenogrid-law80/rdiff/releases/latest/download/rdiff-macos-arm64.dmg), open it, and drag **rdiff.app** to **Applications**. Intel Mac builds are not currently provided. The Mac build is ad-hoc signed and has not been notarized by Apple. If macOS blocks the first launch, review the app in **System Settings → Privacy & Security → Open Anyway**. Install Mac updates manually by replacing the app with the latest DMG; the built-in updater currently supports Windows x64 only.
+On Apple Silicon Macs running macOS 11 or later, download [rdiff-macos-arm64.dmg](https://github.com/taiyoungjang/rdiff/releases/latest/download/rdiff-macos-arm64.dmg), open it, and drag **rdiff.app** to **Applications**. Intel Mac builds are not currently provided. The Mac build is ad-hoc signed and has not been notarized by Apple. If macOS blocks the first launch, review the app in **System Settings → Privacy & Security → Open Anyway**. Install Mac updates manually by replacing the app with the latest DMG; the built-in updater currently supports Windows x64 only.
 
 For macOS CLI and P4V integration, use `/Applications/rdiff.app/Contents/MacOS/rdiff` as the executable path. For example:
 
@@ -51,7 +51,9 @@ Select a file and use **Copy left → right** / **Copy right → left** (or Alt+
 
 ## GitHub self-update
 
-Open **Settings** (gear) and click **Check updates** in either the Diff or three-way merge window to check the latest stable GitHub Release of `zenogrid-law80/rdiff`. If an update is available, click **Install v…**. The button tooltip shows the result or error details. Updating does not restart the application: unsaved edits remain open, and the new version takes effect on the next launch.
+Releases moved to `taiyoungjang/rdiff` in v0.1.13. Users of v0.1.12 and earlier must install v0.1.13 manually once to receive later updates from the new repository.
+
+Open **Settings** (gear) and click **Check updates** in either the Diff or three-way merge window to check the latest stable GitHub Release of `taiyoungjang/rdiff`. If an update is available, click **Install v…**. The button tooltip shows the result or error details. Updating does not restart the application: unsaved edits remain open, and the new version takes effect on the next launch.
 
 ```powershell
 rdiff self-update --check

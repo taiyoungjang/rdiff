@@ -5,8 +5,8 @@ use sha2::{Digest, Sha256};
 use std::{fs, io::Read, path::Path};
 
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
-const API: &str = "https://api.github.com/repos/zenogrid-law80/rdiff/releases/latest";
-const PREFIX: &str = "https://github.com/zenogrid-law80/rdiff/releases/download/";
+const API: &str = "https://api.github.com/repos/taiyoungjang/rdiff/releases/latest";
+const PREFIX: &str = "https://github.com/taiyoungjang/rdiff/releases/download/";
 const ASSET: &str = "rdiff-windows-x86_64.exe";
 const MAX_SIZE: u64 = 512 * 1024 * 1024;
 

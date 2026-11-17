@@ -5,7 +5,7 @@
     <MajorUpgrade DowngradeErrorMessage="A newer version of rdiff is already installed." />
     <MediaTemplate EmbedCab="yes" />
     <Property Id="ARPCOMMENTS" Value="Native text comparison and three-way merge" />
-    <Property Id="ARPURLINFOABOUT" Value="https://github.com/zenogrid-law80/rdiff" />
+    <Property Id="ARPURLINFOABOUT" Value="https://github.com/taiyoungjang/rdiff" />
     <StandardDirectory Id="LocalAppDataFolder">
       <Directory Id="ProgramsFolder" Name="Programs">
         <Directory Id="INSTALLFOLDER" Name="rdiff">
