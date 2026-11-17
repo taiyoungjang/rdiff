@@ -24,9 +24,16 @@ The canonical URL and Open Graph URL in `index.html` point to `https://rdiff.ytl
 
 ### GitHub Pages
 
-`.github/workflows/pages.yml` deploys this directory when changes to `website/` or the workflow are pushed to `main`. It can also be run manually through GitHub Actions. The workflow checks JavaScript syntax, runs preference and translation tests, and publishes the static files without a build step.
+`.github/workflows/pages.yml` deploys this directory when changes to `website/`, its tests, or the workflow are pushed to `main`. It can also be run manually through GitHub Actions. The workflow checks JavaScript syntax, runs preference and translation tests, and publishes the static files without a build step.
 
-The repository's Pages publishing source is **GitHub Actions**, with custom domain `rdiff.ytlaw80.com`. Its DNS CNAME points to `zenogrid-law80.github.io`. With an Actions deployment, the custom domain is stored in the repository's Pages settings; a `CNAME` file is not needed.
+To configure deployment for `taiyoungjang/rdiff`:
+
+1. In the repository's **Settings → Pages**, select **GitHub Actions** as the publishing source.
+2. In the same settings, save `rdiff.ytlaw80.com` as the custom domain. If it is still assigned to another GitHub Pages site, remove it there first.
+3. At the DNS provider, configure a CNAME record for `rdiff` pointing to `taiyoungjang.github.io`. Remove any conflicting records for that hostname.
+4. Push the workflow to `main` or run it from the **Actions** tab. After DNS and certificate provisioning complete, enable **Enforce HTTPS** in Pages settings.
+
+The custom domain is stored in the repository's Pages settings when using GitHub Actions; a `CNAME` file is not needed. See [GitHub's custom domain instructions](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) for verification and troubleshooting.
 
 ## Content
 
